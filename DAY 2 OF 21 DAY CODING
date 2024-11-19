@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Read input
+    int n;
+    cin >> n;
+
+    // Handle base cases
+    if (n == 1 || n == 2) {
+        cout << 1 << endl;
+        return 0;
+    }
+
+    // Initialize variables for the Fibonacci sequence
+    long long prev1 = 1, prev2 = 1, curr;
+
+    // Calculate Fibonacci using iteration
+    for (int i = 3; i <= n; i++) {
+        curr = prev1 + prev2;  // Current Fibonacci number
+        prev2 = prev1;        // Update prev2
+        prev1 = curr;         // Update prev1
+    }
+
+    // Output the result
+    cout << curr << endl;
+
+    return 0;
+}
